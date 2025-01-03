@@ -47,8 +47,7 @@ export interface SecureStoragePluginNative {
 
 export abstract class SecureStorageBase
   extends WebPlugin
-  implements SecureStoragePlugin
-{
+  implements SecureStoragePlugin {
   protected prefix = 'capacitor-storage_'
   protected sync = false
   protected access = KeychainAccess.whenUnlocked
@@ -306,8 +305,7 @@ function parseISODate(isoDate: string): Date | null {
 /* eslint-disable */
 export class NativeBiometricWeb
   extends WebPlugin
-  implements NativeBiometricPlugin
-{
+  implements NativeBiometricPlugin {
   async isAvailable(): Promise<AvailableResult> {
     throw new Error('Method not implemented.')
   }

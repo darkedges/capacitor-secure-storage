@@ -151,7 +151,6 @@ public class SSSecurityUtils implements ISSSecurityUtils {
     return generateKey(keystoreAlias, isAuthenticationRequired);
   }
 
-  @TargetApi(Build.VERSION_CODES.M)
   private boolean generateKey(
     String keystoreAlias,
     boolean isAuthenticationRequired
@@ -208,13 +207,13 @@ public class SSSecurityUtils implements ISSSecurityUtils {
     @NonNull Context context,
     String alias,
     String input,
-    boolean isAuthorizationRequared
+    boolean isAuthorizationRequired
   ) throws SSSecurityException {
     try {
       final Cipher cipher = getEncodeCipher(
         context,
         alias,
-        isAuthorizationRequared
+              isAuthorizationRequired
       );
       final byte[] bytes = cipher.doFinal(input.getBytes());
       return Base64.encodeToString(bytes, Base64.NO_WRAP);
