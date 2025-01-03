@@ -213,7 +213,7 @@ public class SSSecurityUtils implements ISSSecurityUtils {
       final Cipher cipher = getEncodeCipher(
         context,
         alias,
-              isAuthorizationRequired
+        isAuthorizationRequired
       );
       final byte[] bytes = cipher.doFinal(input.getBytes());
       return Base64.encodeToString(bytes, Base64.NO_WRAP);
